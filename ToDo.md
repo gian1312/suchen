@@ -1,11 +1,15 @@
 #Proposal until Do 1000
 
 Motivation
+
 Gian 1/4 Seite --> Wieso  Wichtig
+
 Was gemacht worden ist
 Robin
+
 Was machen wir?
 Björn
+
 Wie machen wirs?
 Varin
 
