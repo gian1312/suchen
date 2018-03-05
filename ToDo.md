@@ -1,22 +1,22 @@
-#Proposal until Do 1000
+# Proposal until Do 1000
 
-Motivation
+### Motivation
 
 Gian 1/4 Seite --> Wieso  Wichtig
 
-Was gemacht worden ist?
+### Was gemacht worden ist?
 
 Robin
 
-Was machen wir?
+### Was machen wir?
 
 Björn
 
-Wie machen wirs?
+### Wie machen wirs?
 
 Varin
 
-Sauberer Text per Mail an Varin
+**Sauberer Text per Mail oder Slackchannel #writing an Varin**
 
 
 Am Do anschauen welche Deadlines
