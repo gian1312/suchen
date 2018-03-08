@@ -45,15 +45,24 @@
 
 \section{Description of the project}
 
-A high level description of the project, mentioning the main goal, the input and planned output data. Typically 4-5 sentences, also citing immediately related literature \cite{paper}.
+In the Industry 4.0 the need for automation increases tremendously and thus the demand for robots with high navigation abilities in complex three-dimensional surroundings grows vastly. Especially deep learning allows an efficient approach to achieve this. Savinov et al. [1] used an animal inspired non-metric (Gillner & Mallot, Foo et al.)[2, 3] semi-parametric topological memory (SPTM) approach. With this approach, they were able to improve their success rate by a factor of three compared to their baselines. Our team will evaluate further tensorforce based baselines which follows the same evaluation procedure as introduced by Savinov et al. [1] and will allow to put their work on an even more solid foundation. \cite{paper}.
 
 \section{Work packages and timeline}
 
-Detailed descriptions of work packages you planned, their outcomes, the responsible group member and estimated timeline. Specify the challenges that will be tackled and considered solutions with possible alternatives, citing related documents if applicable. Mention the platform (Android, PC etc.) and the language (C++ etc.) you plan to use.
+Timeline and project planning
+Our project is organized in four main parts. We will start with an orientation phase to gain some knowledge about previously done work, focused mainly on Nikolay Savinovs’ paper REFCITE. We will then use our gathered insights to deploy the same environment for training and testing GITHUB of our agent within the vizdoom environment GITHUB and use the same evaluation methods of Reinforcement Learning baselines that were used in Nikolay REFCITE. We go for this setup to be later able to benchmark the performance of our agent against the results of the paper REFCITE. 
+Our vizdoom agent will be trained with the AC3 algorithm REFCITE and if there is time left also with PPO REFCITE.
+15.03.18 Finishing orientation
+23.04.18 Midterm presentation
+
+28.05.18 Final Presentation, Project finished
+
 
 \section{Outcomes and Demonstration}
 
-Give detailed information on the expected outcome of your project and the experiments you plan to test your implementation. If applicable, describe the online or offline demo you plan to present at the end of the semester.
+The expected outcome of this project is a fully functionable agent, implemented with the A3C, as well as the PPO algorithm. Therefore, the agent needs to pass throw the same training, validation and test process as referred to in the paper (…). The performance of said algorithms should be like the baselines in the paper, namely between 20% and 30% success rate after 5’000 steps.
+The result will be illustrated as graphs which show the success rate over steps. Furthermore, we want to show the result of the two agents in form of a demonstration video.
+
 
 
 \vspace{1cm}
