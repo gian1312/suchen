@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.14)  9 MAR 2018 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.14)  9 MAR 2018 10:00
 entering extended mode
 **./3DVision_Proposal_Buff_Heinrich_Joos_Staehli.tex
 (3DVision_Proposal_Buff_Heinrich_Joos_Staehli.tex
@@ -255,51 +255,39 @@ File: pics/Bild_Robin_Staehli.jpg Graphic file (type jpg)
 Package pdftex.def Info: pics/Bild_Robin_Staehli.jpg used on input line 38.
 (pdftex.def)             Requested size: 63.62317pt x 85.35826pt.
 
-
-LaTeX Warning: Citation `(' on page 1 undefined on input line 53.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 52--57
 
  []
 
-<pics/ProjectStructure.png, id=6, 712.6625pt x 261.97874pt>
+<pics/ProjectStructure.png, id=6, 712.6625pt x 262.9825pt>
 File: pics/ProjectStructure.png Graphic file (type png)
 
 <use pics/ProjectStructure.png>
 Package pdftex.def Info: pics/ProjectStructure.png used on input line 60.
-(pdftex.def)             Requested size: 516.0pt x 189.69186pt.
-
-
-LaTeX Warning: Citation `NSavinov' on page 1 undefined on input line 85.
-
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./pics/buffv.jpg> <./pi
-cs/GianAndreaHeinrich.png
+(pdftex.def)             Requested size: 516.0pt x 190.41866pt.
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./pics/buffv.jpg> <./p
+ics/GianAndreaHeinrich.png
 
 pdfTeX warning: pdflatex.exe (file ./pics/GianAndreaHeinrich.png): large interl
 aced PNG might cause out of memory (use non-interlaced PNG to fix this)
 > <./pics/Bjoern.jpg> <./pics/Bild_Robin_Staehli.jpg>]
 (3DVision_Proposal_Buff_Heinrich_Joos_Staehli.bbl) [2 <./pics/ProjectStructure.
-png>] (3DVision_Proposal_Buff_Heinrich_Joos_Staehli.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+png>] (3DVision_Proposal_Buff_Heinrich_Joos_Staehli.aux) ) 
 Here is how much of TeX's memory you used:
- 2364 strings out of 493334
- 39142 string characters out of 3139251
+ 2362 strings out of 493334
+ 39129 string characters out of 3139251
  103577 words of memory out of 3000000
- 5889 multiletter control sequences out of 15000+200000
+ 5887 multiletter control sequences out of 15000+200000
  34924 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,8n,25p,818b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
-rw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
-pfb>
+{C:/Program Files/MiK
+TeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
+es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
 Output written on 3DVision_Proposal_Buff_Heinrich_Joos_Staehli.pdf (2 pages, 58
-62709 bytes).
+57617 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
