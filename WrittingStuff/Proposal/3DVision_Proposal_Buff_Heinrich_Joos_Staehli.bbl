@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{Nsavinov}
+Nikolay Savinov, Alexey Dosovitskiy, and Vladlen Koltung.
+\newblock Semi-parametric topological memory for navigation.
+\newblock {\em ICLR}, 2018.
+
+\bibitem{Gillner}
+S.~Gillner and H.~A. Mallot.
+\newblock Navigation and acquisition of spatial knowledge in a virtual maze.
+\newblock {\em Journal of Cognitive Neuroscience}, 10(4):445--463, 1998.
+
+\bibitem{Foo}
+P.~Foo, W.~H. Warren, A.~Duchon, and M.~J. Tarr.
+\newblock Do humans integrate routes into a cognitive map? map- versus
+  landmark-based navigation of novel shortcuts.
+\newblock {\em Journal of Experimental Psychology-Learning Memory and
+  Cognition}, 31(2):195--215, 2005.
+
+\bibitem{GitRepoSavinov}
+Nicolay Savinov.
+\newblock Sptm github repository.
+
+\bibitem{AC3Ref}
+Alan~K. Mackworth.
+\newblock {\em Consistency in Networks of Relations A2 - Webber, Bonnie Lynn},
+  pages 69--78.
+\newblock Morgan Kaufmann, 1981.
+
+\bibitem{PPORef}
+Schulmann John, Wolski Filip, Dhariwal Prafulla, Radford Alec, and Klimov Oleg.
+\newblock Proximal policy optimization algorithms.
+\newblock {\em CoRR}, abs/1707.06347, 2017.
+
+\end{thebibliography}
