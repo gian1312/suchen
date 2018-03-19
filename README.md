@@ -9,6 +9,8 @@ The Project overview can be found in ProjectStructure.xml
 * If you want to edit this Readme use this [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### Useful Links
+Savinov
+* [Google Doc](https://docs.google.com/document/d/1NbX_4TDONXgPzOR2Dteq9g_e4Lln3jjzdjTNyAiJDWM/edit)
 
 SLTM Tutorial with github
 * [Youtube](https://www.youtube.com/watch?v=l4X-kZjl1gs)
