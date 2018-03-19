@@ -11,7 +11,7 @@ The Project overview can be found in ProjectStructure.xml
 
 ### Useful Links
 Savinov
-* [Savionvs Paper]
+* [Savionvs Paper](https://arxiv.org/pdf/1803.00653.pdf)
 * [Google Doc](https://docs.google.com/document/d/1NbX_4TDONXgPzOR2Dteq9g_e4Lln3jjzdjTNyAiJDWM/edit)
 * [Mirowskis Stuff](https://arxiv.org/pdf/1611.03673.pdf)
 * [A3C](https://arxiv.org/pdf/1602.01783.pdf)
