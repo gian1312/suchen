@@ -1,3 +1,4 @@
+
 # NavigationByReinforcementLearning
 3d Vision Course 2018 Semester Project ETH Zurich
 
@@ -11,6 +12,7 @@ The Project overview can be found in ProjectStructure.xml
 ### Useful Links
 Savinov
 * [Google Doc](https://docs.google.com/document/d/1NbX_4TDONXgPzOR2Dteq9g_e4Lln3jjzdjTNyAiJDWM/edit)
+* [Mirowskis Stuff](https://arxiv.org/pdf/1611.03673.pdf)
 
 SLTM Tutorial with github
 * [Youtube](https://www.youtube.com/watch?v=l4X-kZjl1gs)
