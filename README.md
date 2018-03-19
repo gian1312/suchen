@@ -24,3 +24,4 @@ SLTM Tutorial with github
 
 Tensorforce
 * [Async Example](https://github.com/reinforceio/tensorforce/blob/master/examples/openai_gym_async.py) 
+* [Intro to Tensorforce](https://reinforce.io/blog/introduction-to-tensorforce/) 
