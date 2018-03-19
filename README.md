@@ -27,3 +27,7 @@ Tensorforce
 * [Async Example](https://github.com/reinforceio/tensorforce/blob/master/examples/openai_gym_async.py) 
 * [Intro to Tensorforce](https://reinforce.io/blog/introduction-to-tensorforce/) 
 * [**Tensorforce Docs**](https://media.readthedocs.org/pdf/tensorforce/latest/tensorforce.pdf)
+
+OpenAI Gym
+* [How to Wrap an ENV 1](https://stackoverflow.com/questions/45068568/is-it-possible-to-create-a-new-gym-environment-in-openai/47132897#47132897)
+* [2](https://stackoverflow.com/questions/45068568/is-it-possible-to-create-a-new-gym-environment-in-openai)
