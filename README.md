@@ -10,9 +10,9 @@ The Project overview can be found in ProjectStructure.xml
 
 ### Useful Links
 * SLTM Tutorial with github
-* [Youtube](https://www.youtube.com/watch?v=l4X-kZjl1gs)
-* [Github](https://github.com/nicholaslocascio/bcs-lstm)
+** [Youtube](https://www.youtube.com/watch?v=l4X-kZjl1gs)
+** [Github](https://github.com/nicholaslocascio/bcs-lstm)
 * Tensorboard
-* [Nice Red Nail Guy](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard)
+** [Nice Red Nail Guy](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard)
 * Tensorforce
-* [Async Example](https://github.com/reinforceio/tensorforce/blob/master/examples/openai_gym_async.py) 
+** [Async Example](https://github.com/reinforceio/tensorforce/blob/master/examples/openai_gym_async.py) 
