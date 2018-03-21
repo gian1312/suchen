@@ -43,9 +43,10 @@
         "seconds": 600
     },
     "summarizer": {
-        "directory": null,
-        "labels": [],
+        "directory": "/board/",
+        "labels": ['gradients','configuration','regularization','inputs','losses','variables'],
         "seconds": 120
+
     },
     "execution": {
         "type": "single",
