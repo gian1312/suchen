@@ -31,3 +31,7 @@ Tensorforce
 OpenAI Gym
 * [How to Wrap an ENV 1](https://stackoverflow.com/questions/45068568/is-it-possible-to-create-a-new-gym-environment-in-openai/47132897#47132897)
 * [2](https://stackoverflow.com/questions/45068568/is-it-possible-to-create-a-new-gym-environment-in-openai)
+
+Available Code
+* [A3C-LSTM-Tensorflow](https://github.com/MatheusMRFM/A3C-LSTM-with-Tensorflow)
+* [A3C-Doom](https://github.com/awjuliani/DeepRL-Agents/blob/master/A3C-Doom.ipynb)
