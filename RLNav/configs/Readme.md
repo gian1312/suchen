@@ -10,6 +10,6 @@
     {
         "type": "lstm",
         "size": 512,
-	"dropout": None
+	"dropout": None <-- Specifies interconnetion, 0 no dropout, 1 no connection
     }
 ]
