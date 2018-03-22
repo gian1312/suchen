@@ -150,6 +150,9 @@ class VizdoomC(Environment):
 
         raise NotImplementedError
 
+    def reset_environment(self):
+        self.reset()
+
     def reset(self):
 
         self.env.new_episode()
