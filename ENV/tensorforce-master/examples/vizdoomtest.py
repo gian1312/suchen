@@ -148,7 +148,7 @@ def main():
 
             states = environment.states,
 
-            actions= environment.actionslist,
+            actions= environment.actions,
 
             network= network_spec
 

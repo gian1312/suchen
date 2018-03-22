@@ -237,6 +237,6 @@ class VizdoomC(Environment):
 
     def actions(self):
 
-        return ACTION_SIZE
+        return dict(type='bool', shape=self.actionslist, min_value=0, max_value=1)
 
   
