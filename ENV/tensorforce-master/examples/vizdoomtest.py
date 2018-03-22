@@ -58,8 +58,6 @@ from tensorforce import TensorForceError
 
 import json
 
-
-
 from tensorforce.agents import Agent
 
 from tensorforce.execution import Runner
@@ -111,7 +109,6 @@ def main():
     environment = VizdoomC() #(mode_id=args.mode, visible=not args.hide)
 
 
-
     if args.agent_config is not None:
 
         with open(args.agent_config, 'r') as fp:
@@ -136,8 +133,14 @@ def main():
 
         logger.info("No network configuration provided.")
 
+    print("INFO INFO INFO INFO INFO")
     print("Network")
     print(network_spec)
+    print("environment actions")
+    print(environment.actions)
+    print("environment states")
+    print(environment.states)
+    print("INFO INFO INFO INFO INFO")
 
     agent = Agent.from_spec(
 
