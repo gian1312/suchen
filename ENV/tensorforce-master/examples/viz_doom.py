@@ -226,8 +226,10 @@ class VizdoomC(Environment):
     @property
 
     def states(self):
+	
+        shape=(self.height, self.width)
 
-        return self.height, self.width    
+        return dict(shape=shape, type='float') #self.height, self.width    
 
 
 
