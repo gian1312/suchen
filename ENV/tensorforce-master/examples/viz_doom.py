@@ -49,7 +49,7 @@ from skimage.color import rgb2gray
 from skimage.io import imsave
 
 
-import tensorforce.environments
+from tensorforce.environments import Environment
 
 import tensorforce.util
 

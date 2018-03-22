@@ -141,15 +141,16 @@ def main():
 
     agent = Agent.from_spec(
 
+        #changed kwargs with spec
         spec=agent_config,
 
         kwargs=dict(
 
-            states_spec=environment.states,
+            states_spec = environment.states,
 
-            actions_spec=environment.actionslist,
+            actions_spec= environment.actionslist,
 
-            network_spec=network_spec
+            network_spec= network_spec
 
         )
 
