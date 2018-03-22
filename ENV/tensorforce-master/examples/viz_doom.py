@@ -36,9 +36,9 @@ from __future__ import print_function
 
 from __future__ import division
 
-from MyEnvironment import *
-
 import multiprocessing, threading
+
+from MyEnvironment import *
 
 from vizdoom import *
 
@@ -78,7 +78,7 @@ class VizdoomC(Environment):
 
         self.save_img = False #save_img 
 
-        self.render = False #render
+        self.render = render #render
 
         self.env_id = 1 #worker_id
 
@@ -212,10 +212,12 @@ class VizdoomC(Environment):
 
 
         return [self.current_state, r, d]
-
+    
+    
     def process_image (self, image):
         s = resize(image, (self.height, self.width))
         return s
+
 
     def help_message(self):
         pass

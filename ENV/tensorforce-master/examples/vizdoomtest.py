@@ -146,11 +146,11 @@ def main():
 
         kwargs=dict(
 
-            states_spec = environment.states,
+            states = environment.states,
 
-            actions_spec= environment.actionslist,
+            actions= environment.actionslist,
 
-            network_spec= network_spec
+            network= network_spec
 
         )
 
