@@ -213,6 +213,12 @@ class VizdoomC(Environment):
 
         return [self.current_state, r, d]
 
+    def process_image (self, image):
+        s = resize(image, (self.height, self.width))
+        return s
+
+    def help_message(self):
+        pass
 
 
     @property
