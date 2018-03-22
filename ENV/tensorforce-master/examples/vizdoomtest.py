@@ -136,7 +136,8 @@ def main():
 
         logger.info("No network configuration provided.")
 
-
+    print("Network")
+    print(network_spec)
 
     agent = Agent.from_spec(
 
@@ -146,7 +147,7 @@ def main():
 
             states_spec=environment.states,
 
-            actions_spec=environment.actions,
+            actions_spec=environment.actionslist,
 
             network_spec=network_spec
 

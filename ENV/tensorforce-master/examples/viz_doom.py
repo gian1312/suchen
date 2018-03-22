@@ -84,8 +84,8 @@ class VizdoomC(Environment):
 
         self.num_img = 0
 
-        print("Info\n\n")
-        print(self.actions)
+        #print("Info\n\n")
+        #print(self.actions)
 
         self.env = DoomGame()
 
@@ -133,7 +133,7 @@ class VizdoomC(Environment):
 
         self.env.init()
 		
-        print(dir(self))
+        #print(dir(self))
 
         self.actionslist = np.identity(ACTION_SIZE, dtype=bool).tolist()
 
