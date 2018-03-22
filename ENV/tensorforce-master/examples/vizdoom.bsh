@@ -1,5 +1,5 @@
 
-phyton examples/vizdoom.py -a examples/configs/ppo.json -n examples/configs/mlp2_network.json -e 10 -t 50 -s examples/bsp.txt -se 100
+python examples/vizdoomtest.py -a examples/configs/ppo.json -n examples/configs/mlp2_network.json -e 10 -t 50 -s examples/bsp.txt -se 100
 
 
 

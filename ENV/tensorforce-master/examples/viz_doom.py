@@ -36,7 +36,7 @@ from __future__ import print_function
 
 from __future__ import division
 
-from Environment import *
+from MyEnvironment import *
 
 import multiprocessing, threading
 
@@ -57,7 +57,7 @@ import tensorforce.util
 ACTION_SIZE = 3
 
 
-class Vizdoom(Environment):
+class VizdoomC(Environment):
 
     """
 
@@ -65,96 +65,102 @@ class Vizdoom(Environment):
 
     """
 
-	def __init__(self): #(self, render, worker_id, save_img)
+    def __init__(self):#, modeid = 0): #(self, render, worker_id, save_img)
 
-		self.height = RESEIZE_HEIGHT
+        self.height = RESEIZE_HEIGHT
+        render=False #Dr. Gian
+		
+        #self.mode_id = int(modeid)
 
-		self.width = RESEIZE_WIDTH
+        self.width = RESEIZE_WIDTH
 
-		self.channels = CHANNELS
+        self.channels = CHANNELS
 
-		self.save_img = False #save_img 
+        self.save_img = False #save_img 
 
-		self.render = False #render
+        self.render = False #render
 
-		self.env_id = 1 #worker_id
+        self.env_id = 1 #worker_id
 
-		self.num_img = 0
+        self.num_img = 0
 
+        print("Info\n\n")
+        print(self.actions)
 
+        self.env = DoomGame()
 
-		self.env = DoomGame()
+        self.env.set_doom_scenario_path("examples/basic.wad") #This corresponds to the simple task we will pose our agent
 
-		self.env.set_doom_scenario_path("basic.wad") #This corresponds to the simple task we will pose our agent
+        self.env.set_doom_map("map01")
 
-		self.env.set_doom_map("map01")
+        self.env.set_screen_resolution(ScreenResolution.RES_160X120)
 
-		self.env.set_screen_resolution(ScreenResolution.RES_160X120)
+        self.env.set_screen_format(ScreenFormat.GRAY8)
 
-		self.env.set_screen_format(ScreenFormat.GRAY8)
+        self.env.set_render_hud(render)
 
-		self.env.set_render_hud(render)
+        self.env.set_render_crosshair(render)
 
-		self.env.set_render_crosshair(render)
+        self.env.set_render_weapon(render)
 
-		self.env.set_render_weapon(render)
+        self.env.set_render_decals(render)
 
-		self.env.set_render_decals(render)
+        self.env.set_render_particles(render)
 
-		self.env.set_render_particles(render)
+        self.env.add_available_button(Button.MOVE_LEFT)
 
-		self.env.add_available_button(Button.MOVE_LEFT)
+        self.env.add_available_button(Button.MOVE_RIGHT)
 
-		self.env.add_available_button(Button.MOVE_RIGHT)
+        self.env.add_available_button(Button.ATTACK)
 
-		self.env.add_available_button(Button.ATTACK)
+        self.env.add_available_game_variable(GameVariable.AMMO2)
 
-		self.env.add_available_game_variable(GameVariable.AMMO2)
+        self.env.add_available_game_variable(GameVariable.POSITION_X)
 
-		self.env.add_available_game_variable(GameVariable.POSITION_X)
+        self.env.add_available_game_variable(GameVariable.POSITION_Y)
 
-		self.env.add_available_game_variable(GameVariable.POSITION_Y)
+        self.env.set_episode_timeout(300)
 
-		self.env.set_episode_timeout(300)
+        self.env.set_episode_start_time(10)
 
-		self.env.set_episode_start_time(10)
+        self.env.set_window_visible(render)
 
-		self.env.set_window_visible(render)
+        self.env.set_sound_enabled(False)
 
-		self.env.set_sound_enabled(False)
+        self.env.set_living_reward(-1)
 
-		self.env.set_living_reward(-1)
+        self.env.set_mode(Mode.PLAYER)
 
-		self.env.set_mode(Mode.PLAYER)
+        self.env.init()
+		
+        print(dir(self))
 
-		self.env.init()
+        self.actionslist = np.identity(ACTION_SIZE, dtype=bool).tolist()
 
-		self.actions = np.identity(ACTION_SIZE, dtype=bool).tolist()
-
-		self.reset_environment()
+        self.reset_environment()
 
     def __str__(self):
 
         raise NotImplementedError
-		#print("_str_ ist leer")
-		#return 'MazeExplorer({})'.format(self.mode_id)
+        #print("_str_ ist leer")
+        #return 'MazeExplorer({})'.format(self.mode_id)
 
 
     def close(self):
 
-		raise NotImplementedError
+        raise NotImplementedError
 
     def reset(self):
 
-		self.env.new_episode()
+        self.env.new_episode()
 
-		s = self.env.get_state().screen_buffer
+        s = self.env.get_state().screen_buffer
 
-		s = self.process_image(s)
+        s = self.process_image(s)
 
-		self.current_state = np.stack((s, s, s, s), axis = 2)
+        self.current_state = np.stack((s, s, s, s), axis = 2)
 
-		return self.current_state
+        return self.current_state
     
 
 
@@ -162,47 +168,47 @@ class Vizdoom(Environment):
 
       
 
-		seed = 15
+        seed = 15
 
         return seed
 
 
-	def get_current_state(self): # Neu, wir wissen nicht von wo current state kommt. (aus Viz oder ENV)
+    def get_current_state(self): # Neu, wir wissen nicht von wo current state kommt. (aus Viz oder ENV)
 
-		return self.current_state
+        return self.current_state
 
+   
+    def execute(self, actionslist):
 
-    def execute(self, actions):
+        r = self.env.make_action(self.actionslist[action]) / 100.0
 
-		r = self.env.make_action(self.actions[action]) / 100.0
-
-		d = self.env.is_episode_finished()
-
-
-
-		if d == False:
-
-			s = self.env.get_state().screen_buffer
-
-			s = self.process_image(s)
-
-			s_expanded = np.expand_dims(s, axis=2)
-
-			self.current_state = np.append(self.current_state[:,:,1:], s_expanded, axis = 2)
+        d = self.env.is_episode_finished()
 
 
 
-		self.finished = d
+        if d == False:
+
+            s = self.env.get_state().screen_buffer
+
+            s = self.process_image(s)
+
+            s_expanded = np.expand_dims(s, axis=2)
+
+            self.current_state = np.append(self.current_state[:,:,1:], s_expanded, axis = 2)
 
 
 
-		if self.save_img == True:
-
-			self.save_image(self.current_state)
+        self.finished = d
 
 
 
-		return [self.current_state, r, d]
+        if self.save_img == True:
+
+            self.save_image(self.current_state)
+
+
+
+        return [self.current_state, r, d]
 
 
 
@@ -210,7 +216,7 @@ class Vizdoom(Environment):
 
     def states(self):
 
-		return self.height, self.width	
+        return self.height, self.width    
 
 
 
@@ -218,34 +224,6 @@ class Vizdoom(Environment):
 
     def actions(self):
 
-		return ACTION_SIZE
+        return ACTION_SIZE
 
   
-
-
-
-    @staticmethod
-	"""
-
-    def from_spec(spec,     kwargs):
-
-        
-
-        Creates an environment from a specification dict.
-
-      
-
-        env = tensorforce.util.get_object(
-
-            obj=spec,
-
-            predefined_objects=tensorforce.environments.environments,
-
-            kwargs=kwargs
-
-        )
-
-        assert isinstance(env, Environment)
-
-        return env
-		"""
