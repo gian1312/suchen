@@ -78,21 +78,27 @@ def main():
 
     #parser.add_argument('--hide', dest='hide', action='store_const', const=True, default=False, help="Hide output window")
 
-    parser.add_argument('-a', '--agent-config', help="Agent configuration file")
+   # parser.add_argument('-a', '--agent-config', help="Agent configuration file")
+    
+    parser.add_argument('-a', '--agent-config', default="configs/ppo.json", help="Agent configuration file")
 
-    parser.add_argument('-n', '--network-spec', default=None, help="Network specification file")
+   # parser.add_argument('-n', '--network-spec', default=None, help="Network specification file")
+
+    parser.add_argument('-n', '--network-spec', default="configs/mlp2_network.json", help="Network specification file")
 
     parser.add_argument('-e', '--episodes', type=int, default=50000, help="Number of episodes")
 
     parser.add_argument('-t', '--max-timesteps', type=int, default=2000, help="Maximum number of timesteps per episode")
 
-    parser.add_argument('-s', '--save', help="Save agent to this dir")
+   # parser.add_argument('-s', '--save', help="Save agent to this dir")
+    
+    parser.add_argument('-s', '--save', default="bsp.txt" ,help="Save agent to this dir")
 
     parser.add_argument('-se', '--save-episodes', type=int, default=100, help="Save agent every x episodes")
 
     parser.add_argument('-l', '--load', help="Load agent from this dir")
 
-    parser.add_argument('-D', '--debug', action='store_true', default=False, help="Show debug outputs")
+    parser.add_argument('-D', '--debug', action='store_true', default=True, help="Show debug outputs")
 
 
 
@@ -119,12 +125,13 @@ def main():
 
         raise TensorForceError("No agent configuration provided.")
 
-
+    #network_spec = [dict(type='dense', size=32, activation='tanh'), dict(type='dense', size=32, activation='tanh')]
+	
 
     if args.network_spec is not None:
 
         with open(args.network_spec, 'r') as fp:
-
+	    
             network_spec = json.load(fp=fp)
 
     else:
@@ -133,14 +140,15 @@ def main():
 
         logger.info("No network configuration provided.")
 
-    print("INFO INFO INFO INFO INFO")
+
+    print("INFO vizdoomtest INFO INFO INFO INFO")
     print("Network")
     print(network_spec)
     print("environment actions")
     print(environment.actions)
     print("environment states")
     print(environment.states)
-    print("INFO INFO INFO INFO INFO")
+    print("INFO INFO INFO INFO INFO finished")
 
     agent = Agent.from_spec(
 

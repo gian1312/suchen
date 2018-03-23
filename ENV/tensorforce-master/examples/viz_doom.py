@@ -57,6 +57,7 @@ import tensorforce.util
 ACTION_SIZE = 3
 
 
+
 class VizdoomC(Environment):
 
     """
@@ -68,8 +69,8 @@ class VizdoomC(Environment):
     def __init__(self):#, modeid = 0): #(self, render, worker_id, save_img)
 
         self.height = RESEIZE_HEIGHT
-        render=False #Dr. Gian
-		
+        render=True #Dr. Gian
+        
         #self.mode_id = int(modeid)
 
         self.width = RESEIZE_WIDTH
@@ -132,10 +133,11 @@ class VizdoomC(Environment):
         self.env.set_mode(Mode.PLAYER)
 
         self.env.init()
-		
+        
         #print(dir(self))
 
-        self.actionslist = np.identity(ACTION_SIZE, dtype=bool).tolist()
+        #self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
+        self.actionslist = [1,2,3]
 
         self.reset_environment()
 
@@ -226,17 +228,18 @@ class VizdoomC(Environment):
     @property
 
     def states(self):
-	
+    
         shape=(self.height, self.width)
 
         return dict(shape=shape, type='float') #self.height, self.width    
-
+    
 
 
     @property
 
     def actions(self):
 
-        return dict(type='bool', shape=self.actionslist, min_value=0, max_value=1)
-
+        return dict(shape=self.actionslist, type='float')
+     #   return dict(shape=self.actionslist, type='bool', min_value=0, max_value=1)
+        #return dict(type='int', shape=self.actionslist, min_value=0, max_value=1, num_actions=3)
   
