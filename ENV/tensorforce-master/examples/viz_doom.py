@@ -136,8 +136,8 @@ class VizdoomC(Environment):
         
         #print(dir(self))
 
-        #self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
-        self.actionslist = [1,2,3]
+        self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
+        #self.actionslist = [1,2,3]
 
         self.reset_environment()
 
