@@ -64,6 +64,12 @@ def main():
     if args.network_spec is not None:
         with open(args.network_spec, 'r') as fp:
             network_spec = json.load(fp=fp)
+            network_spec2 = network_spec[0] #auslesen der ersten spalte mit indeces
+            network_spec2['indices'] = int(network_spec2['indices']) #explizit "indeces" zu int convertieren
+            network_spec[0] = network_spec2 #zurück speichern
+            print("network_spec in da house")
+            print(network_spec)
+
     else:
         network_spec = None
         logger.info("No network configuration provided.")
