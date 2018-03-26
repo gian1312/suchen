@@ -53,7 +53,7 @@ def main():
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)  # configurable!!!
 
-    environment = MazeExplorer(mode_id=args.mode, visible=not args.hide)
+    environment = MazeExplorer(mode_id=args.mode, visible=not args.hide)#(mode_id=0, visible=True)
 
     if args.agent_config is not None:
         with open(args.agent_config, 'r') as fp:
@@ -71,9 +71,9 @@ def main():
     agent = Agent.from_spec(
         spec=agent_config,
         kwargs=dict(
-            states_spec=environment.states,
-            actions_spec=environment.actions,
-            network_spec=network_spec
+            states=environment.states,
+            actions=environment.actions,
+            network=network_spec
         )
     )
 
