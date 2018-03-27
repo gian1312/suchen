@@ -1,0 +1,11 @@
+
+[
+
+    {
+        "type": "dense",
+        "size": 32
+    },
+    {
+        "type": "flatten"
+    }
+]

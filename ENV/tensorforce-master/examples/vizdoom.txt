@@ -1,0 +1,8 @@
+
+python examples/vizdoomtest.py -a examples/configs/ppo.json -n examples/configs/mlp2_network.json -e 10 -t 50 -s examples/bsp.txt -se 100
+
+
+
+
+python examples/openai_gym.py CartPole-v0 -a examples/configs/ppo.json -n examples/configs/mlp2_network.json
+python maze_explorer.py CartPole-v0 -a configs/ppo.json -n configs/mlp2_network.json
