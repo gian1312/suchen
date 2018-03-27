@@ -41,7 +41,7 @@ def main():
     parser.add_argument('--hide', dest='hide', action='store_const', const=True, default=False, help="Hide output window")
     parser.add_argument('-a', '--agent-config', help="Agent configuration file")
     parser.add_argument('-n', '--network-spec', default=None, help="Network specification file")
-    parser.add_argument('-e', '--episodes', type=int, default=50000, help="Number of episodes")
+    parser.add_argument('-e', '--episodes', type=int, default=200, help="Number of episodes")
     parser.add_argument('-t', '--max-timesteps', type=int, default=2000, help="Maximum number of timesteps per episode")
     parser.add_argument('-s', '--save', help="Save agent to this dir")
     parser.add_argument('-se', '--save-episodes', type=int, default=100, help="Save agent every x episodes")

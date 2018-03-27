@@ -143,8 +143,8 @@ class WorldLayer(WorldItems, WorldQueries, WorldRewards, cocos.layer.Layer, mc.R
         # add floor
         # TODO: Move to `Generator.inverse(map)`
         self.visit_layer = ti.load(os.path.join(script_dir, 'assets', 'ones.tmx'))['map0']
-        for i in xrange(0, len(self.map_layer.cells)):
-            for j in xrange(0, len(self.map_layer.cells[i])):
+        for i in range(0, len(self.map_layer.cells)):
+            for j in range(0, len(self.map_layer.cells[i])):
                 col = self.map_layer.cells[i][j]
                 # If wall exists, remove floor
                 if col.tile and col.tile.id > 0:

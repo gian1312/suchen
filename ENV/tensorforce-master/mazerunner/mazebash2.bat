@@ -1,0 +1,1 @@
+python maze_explorer.py -a configs/dqn.json -n configs/fuckthisshit.json --mode 0 --hide

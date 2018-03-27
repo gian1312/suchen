@@ -64,7 +64,7 @@ class Player(Collidable):
 
         # Create sensors
         self.sensors = []
-        for i in xrange(0, sensor_num):
+        for i in range(0, sensor_num):
             rad = (i-((sensor_num)/2))*sensor_fov;
             sensor = Sensor(sensor_fov, rad, sensor_max)
             self.sensors.append(sensor)

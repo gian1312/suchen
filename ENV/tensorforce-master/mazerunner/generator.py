@@ -31,10 +31,10 @@ class Generator():
 
         # Draw borders
         border_x = template.cells[width]
-        for y in xrange(0,height+1):
+        for y in range(0,height+1):
             border_x[y].tile = template.cells[0][0].tile
 
-        for x in xrange(0,width):
+        for x in range(0,width):
             template.cells[x][height].tile = template.cells[0][0].tile
 
         # Start within borders
@@ -145,7 +145,7 @@ class Generator():
         depth += 1
 
         # Create new wall tiles
-        for i in xrange(0, gap_size):
+        for i in range(0, gap_size):
             if abs(gap - i) > 0:
                 # Copy wall tile from (0,0)
                 if axis == HORIZONTAL:

@@ -7,3 +7,5 @@ python maze_explorer.py -a configs/ppo.json -n configs/mlp2_network.json --mode 
 
 
 python maze_explorer.py -a configs/fuckthisshitagent.json -n configs/fuckthisshit.json --mode 0 --hide
+
+python maze_explorer.py -a configs/dqn.json -n configs/fuckthisshit.json --mode 0 --hide

@@ -1,13 +1,7 @@
 
 [
     {
-        "type": "embedding",
-        "indices": 100,
-        "size": 32
-    },
-    {
-        "type": "dense",
-        "size": 32
+        "type": "flatten"
     },
     {
         "type": "dense",

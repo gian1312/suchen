@@ -29,7 +29,7 @@ class ScoreLayer(cocos.layer.Layer):
 
         self.msgs = {}
 
-        for key, value in self.labels.iteritems():
+        for key, value in self.labels.items():
             str_val = str(int(self.stats[key]))
             msg = cocos.text.Label(self.labels[key] + str_val,
                                     bold=True,
@@ -69,7 +69,7 @@ class ScoreLayer(cocos.layer.Layer):
             Updates game engine each tick
             Copies new stats into labels
         """
-        for key, value in self.labels.iteritems():
+        for key, value in self.labels.items():
             str_val = str(int(self.stats[key]))
             self.msgs[key][0].element.text = self.labels[key] + str_val
             self.msgs[key][1].element.text = self.labels[key] + str_val

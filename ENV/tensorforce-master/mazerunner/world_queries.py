@@ -103,7 +103,7 @@ class WorldQueries(object):
             end = None
 
             # Find shortest boundary intersect
-            index_min = min(xrange(len(lengths)), key=lengths.__getitem__)
+            index_min = min(range(len(lengths)), key=lengths.__getitem__)
 
             if lengths[index_min] > 0:
                 distance += lengths[index_min]
