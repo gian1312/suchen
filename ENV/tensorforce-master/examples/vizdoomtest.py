@@ -75,14 +75,14 @@ def main():
         network_spec = None
         logger.info("No network configuration provided.")
 
-    print("INFO vizdoomtest INFO INFO INFO INFO")
-    print("Network")
-    print(network_spec)
-    print("environment actions")
-    print(environment.actions)
-    print("environment states")
-    print(environment.states)
-    print("INFO INFO INFO INFO INFO finished")
+    #print("INFO vizdoomtest INFO INFO INFO INFO")
+    #print("Network")
+    #print(network_spec)
+    #print("environment actions")
+    #print(environment.actions)
+    #print("environment states")
+    #print(environment.states)
+    #print("INFO INFO INFO INFO INFO finished")
     agent = Agent.from_spec(
         #changed kwargs with spec
         spec=agent_config,
