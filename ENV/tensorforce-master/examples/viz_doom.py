@@ -88,7 +88,8 @@ class VizdoomC(Environment):
 
 
     def close(self):
-        raise NotImplementedError
+        self.env=None
+
 		
     def reset_environment(self): #Redundant??
         self.env.new_episode()
@@ -114,7 +115,11 @@ class VizdoomC(Environment):
         return self.current_state
    
     def execute(self, actions):
-        r = self.env.make_action(self.actionslist[actions]) / 100.0
+        print("exeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecccccccccccuuuuuuuuuuuuuuuuuutttttttttttteeeeeeeeeeeeeeeee")
+        print(actions)
+        actions=(actions.tolist())
+        print(actions)
+        r = self.env.make_action(actions) #hier hats änderungen self.env.make_action(actionlist(actions)) 
         d = self.env.is_episode_finished()
 
         if d == False:
