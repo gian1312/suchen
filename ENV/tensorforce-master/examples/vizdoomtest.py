@@ -36,7 +36,7 @@ from viz_doom import VizdoomC
 def main():
     parser = argparse.ArgumentParser()
 
-    #parser.add_argument('--mode', help="ID of the game mode")
+    parser.add_argument('--mode', help="ID of the game mode")
     parser.add_argument('--hide', dest='hide', action='store_const', const=True, default=False, help="Hide output window")
    # parser.add_argument('-a', '--agent-config', help="Agent configuration file")
     
@@ -58,7 +58,7 @@ def main():
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)  # configurable!!!
 
-    environment = VizdoomC(render=not args.hide) #(mode_id=args.mode, visible=not args.hide)
+    environment = VizdoomC(mode_id=args.mode, visible=not args.hide) #(render=not args.hide) 
 
     if args.agent_config is not None:
         with open(args.agent_config, 'r') as fp:
