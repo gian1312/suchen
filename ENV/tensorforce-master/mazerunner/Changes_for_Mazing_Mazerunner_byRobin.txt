@@ -1,0 +1,4 @@
+Änderungen von Robin
+Nutzen von DQN Agent
+Nutzen von Fuckthisshit network
+In mazeexp.py line 71 action= int(action)
