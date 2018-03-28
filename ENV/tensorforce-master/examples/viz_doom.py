@@ -33,7 +33,7 @@ class VizdoomC(Environment):
     """
     Base environment class.
     """
-    def __init__(self, modeid =0,render=True):#, modeid = 0): #(self, render, worker_id, save_img)
+    def __init__(self, mode_id =0,render=True):#, modeid = 0): #(self, render, worker_id, save_img)
         self.height = RESEIZE_HEIGHT
         
         self.mode_id = int(modeid)
