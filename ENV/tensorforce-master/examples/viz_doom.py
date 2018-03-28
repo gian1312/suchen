@@ -40,7 +40,6 @@ class VizdoomC(Environment):
     """
     def __init__(self, mode_id =0, render=True):#, modeid = 0): #(self, render, worker_id, save_img)
         self.height = RESEIZE_HEIGHT
-        
         self.mode_id = int(mode_id)
         self.width = RESEIZE_WIDTH
         self.channels = CHANNELS
@@ -97,13 +96,14 @@ class VizdoomC(Environment):
         self.env=None
 
 		
+   
     def reset_environment(self): #Redundant??
         self.env.new_episode()
         s = self.env.get_state().screen_buffer
         s = self.process_image(s)
         self.current_state = np.stack((s, s, s, s), axis = 2)
         return self.current_state
-
+    
     def reset(self):
         self.env.new_episode()
         s = self.env.get_state().screen_buffer
@@ -124,8 +124,11 @@ class VizdoomC(Environment):
         #print("exeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecccccccccccuuuuuuuuuuuuuuuuuutttttttttttteeeeeeeeeeeeeeeee")
         #print(actions)
         actions=(actions.tolist())
-        actions=[round(elem,0) for elem in actions]
-        actions=[1,0,0]
+        maxi=max(actions)
+        actions=[1 if x>=maxi else 0 for x in actions]			
+		#actions=[round(elem,0) for elem in actions]
+        #actions=[1,0,1]
+        print("Linoooox 134")
         print(actions)
         r = self.env.make_action(actions) #hier hats änderungen self.env.make_action(actionlist(actions)) 
         d = self.env.is_episode_finished()
@@ -142,7 +145,7 @@ class VizdoomC(Environment):
         if self.save_img == True:
             self.save_image(self.current_state)
 
-        return [self.current_state, r, d]
+        return [self.current_state, d, r]
     
     
     def process_image (self, image):
