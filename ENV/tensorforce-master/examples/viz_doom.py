@@ -18,7 +18,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 import multiprocessing, threading
-from MyEnvironment import *
+import numpy as np
+import time, random
+from abc import ABCMeta, abstractmethod
 from vizdoom import *
 from skimage.transform import resize
 from skimage.color import rgb2gray
@@ -28,6 +30,9 @@ from tensorforce.environments import Environment
 import tensorforce.util
 
 ACTION_SIZE = 3
+RESEIZE_HEIGHT = 84
+RESEIZE_WIDTH = 84
+CHANNELS = 1
 
 class VizdoomC(Environment):
     """
@@ -48,7 +53,7 @@ class VizdoomC(Environment):
         self.env = DoomGame()
         self.env.set_doom_scenario_path("examples/basic.wad") #This corresponds to the simple task we will pose our agent
         self.env.set_doom_map("map01")
-        self.env.set_screen_resolution(ScreenResolution.RES_160X120)
+        self.env.set_screen_resolution(ScreenResolution.RES_640X480) # 160X120
         self.env.set_screen_format(ScreenFormat.GRAY8)
         self.env.set_render_hud(render)
         self.env.set_render_crosshair(render)
