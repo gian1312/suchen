@@ -29,7 +29,7 @@ from skimage.io import imsave
 from tensorforce.environments import Environment
 import tensorforce.util
 
-ACTION_SIZE = 3
+ACTION_SIZE = 1
 RESEIZE_HEIGHT = 84
 RESEIZE_WIDTH = 84
 CHANNELS = 1
@@ -76,7 +76,7 @@ class VizdoomC(Environment):
         
         #print(dir(self))
         #self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
-        self.actionslist =[[True, False, False], [False, True, False], [False, False, True]]
+        self.actionslist = ACTION_SIZE
 
 
 # TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
@@ -123,10 +123,18 @@ class VizdoomC(Environment):
     def execute(self, actions):
         #print("exeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecccccccccccuuuuuuuuuuuuuuuuuutttttttttttteeeeeeeeeeeeeeeee")
         #print(actions)
-        actions=(actions.tolist())
-        maxi=max(actions)
-        actions=[1 if x>=maxi else 0 for x in actions]			
-		#actions=[round(elem,0) for elem in actions]
+        #actions=(actions.tolist())
+        #maxi=max(actions)
+        #actions=[1 if x>=maxi else 0 for x in actions]
+        if int(actions)==1:
+           actions=[1.0,0.0,0.0]
+        elif int(actions)==2:
+           actions=[0.0,1.0,0.0]
+        elif int(actions)==3:
+           actions=[0.0,0.0,1.0]
+        else:
+           actions=[0.0,0.0,0.0]		
+        #actions=[round(elem,0) for elem in actions]
         #actions=[1,0,1]
         print("Linoooox 134")
         print(actions)
