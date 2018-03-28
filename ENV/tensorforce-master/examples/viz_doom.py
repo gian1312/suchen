@@ -76,7 +76,7 @@ class VizdoomC(Environment):
         
         #print(dir(self))
         #self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
-        self.actionslist = ACTION_SIZE
+        self.actionslist =[[True, False, False], [False, True, False], [False, False, True]]
 
 
 # TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'

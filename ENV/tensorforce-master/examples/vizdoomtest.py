@@ -123,8 +123,12 @@ def main():
     report_episodes = args.episodes // 1000
     if args.debug:
         report_episodes = 1
-
+    
     def episode_finished(r):
+        #print(r)
+        #print(r.episode)
+        #print("2")
+        #print(report_episodes)
         if r.episode % report_episodes == 0:
             sps = r.timestep / (time.time() - r.start_time)
             logger.info("Finished episode {ep} after {ts} timesteps. Steps Per Second {sps}".format(ep=r.episode, ts=r.timestep, sps=sps))
@@ -132,6 +136,7 @@ def main():
             logger.info("Average of last 500 rewards: {}".format(sum(r.episode_rewards[-500:]) / 500))
             logger.info("Average of last 100 rewards: {}".format(sum(r.episode_rewards[-100:]) / 100))
         return True
+
 
     logger.info("Starting {agent} for Environment '{env}'".format(agent=agent, env=environment))
     runner.run(args.episodes, args.max_timesteps, episode_finished=episode_finished)
