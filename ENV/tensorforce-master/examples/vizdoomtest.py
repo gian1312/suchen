@@ -58,7 +58,7 @@ def main():
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)  # configurable!!!
 
-    environment = VizdoomC(mode_id=args.mode, visible=not args.hide) #(render=not args.hide) 
+    environment = VizdoomC(mode_id=args.mode, render=not args.hide) #(render=not args.hide) 
 
     if args.agent_config is not None:
         with open(args.agent_config, 'r') as fp:

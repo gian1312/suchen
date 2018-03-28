@@ -33,10 +33,10 @@ class VizdoomC(Environment):
     """
     Base environment class.
     """
-    def __init__(self, mode_id =0,render=True):#, modeid = 0): #(self, render, worker_id, save_img)
+    def __init__(self, mode_id =0, render=True):#, modeid = 0): #(self, render, worker_id, save_img)
         self.height = RESEIZE_HEIGHT
         
-        self.mode_id = int(modeid)
+        self.mode_id = int(mode_id)
         self.width = RESEIZE_WIDTH
         self.channels = CHANNELS
         self.save_img = False #save_img 
