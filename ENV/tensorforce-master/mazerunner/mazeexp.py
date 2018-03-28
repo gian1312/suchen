@@ -66,8 +66,6 @@ class MazeExplorer():
         """
         Take one action for one step
         """
-        print("this is the print of self and action")
-        print(action)
         action= int(action) # Robin changed this number to a integer
         assert isinstance(action, int)
         assert action < self.actions_num, "%r (%s) invalid"%(action, type(action))
