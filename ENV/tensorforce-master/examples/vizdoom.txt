@@ -13,7 +13,7 @@ python maze_explorer.py -a configs/dqn.json -n configs/fuckthisshit.json --mode 
 
 
 
-python vizdoomtest.py -a configs/dqn.json -n configs/fuckthisshit.json -e 10 -t 50 -s examples/outputAgent -se 100 --hide
+python vizdoomtest.py -a configs/dqn.json -n configs/fuckthisshit.json -e 10 -t 50 -s examples/outputAgent -se 100 --mode 0
 
 python3 vizdoomtest.py -a configs/dqn.json -n configs/fuckthisshit.json -e 10 -t 50 -s ~/NavigationByReinforcementLearning/ENV/tensorforce-master/examples/python vizdoomtest.py -a configs/dqn.json -n configs/fuckthisshit.json -e 10 -t 50 -s ~/NavigationByReinforcementLearning/ENV/tensorforce-master/examples/outputAgent -se 100 --hide
  -se 100 --hide
