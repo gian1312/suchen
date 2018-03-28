@@ -111,7 +111,7 @@ class VizdoomC(Environment):
         seed = 15
         return seed
 
-    def get_current_state(self): # Neu, wir wissen nicht von wo current state kommt. (aus Viz oder ENV)
+    def get_current_state(self): 
         return self.current_state
    
     def execute(self, actions):
