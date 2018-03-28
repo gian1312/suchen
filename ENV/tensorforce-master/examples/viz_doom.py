@@ -70,7 +70,15 @@ class VizdoomC(Environment):
         self.env.init()
         
         #print(dir(self))
-        self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
+        #self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
+        self.actionslist = ACTION_SIZE
+
+
+# TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
+
+        #print("List:")
+        #print(np.identity(ACTION_SIZE, dtype=float).tolist()) # {'shape': [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]], 'type': 'float'}
+        #return
         #self.actionslist = [1,2,3]
         self.reset_environment()
     def __str__(self):

@@ -9,3 +9,10 @@ python maze_explorer.py CartPole-v0 -a configs/ppo.json -n configs/mlp2_network.
 =======
 python maze_explorer.py -a configs/dqn.json -n configs/fuckthisshit.json --mode 0 --hide
 >>>>>>> 5f6f15344fc862249cde00681ef42ebfc9ff6c69
+
+
+
+
+
+
+python3 vizdoomtest.py -a configs/dqn.json -n configs/fuckthisshit.json -e 10 -t 50 -s ~/NavigationByReinforcementLearning/ENV/tensorforce-master/examples/outputAgent -se 100 --hide

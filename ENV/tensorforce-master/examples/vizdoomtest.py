@@ -47,7 +47,7 @@ def main():
     parser.add_argument('-t', '--max-timesteps', type=int, default=2000, help="Maximum number of timesteps per episode")
    # parser.add_argument('-s', '--save', help="Save agent to this dir")
     
-    parser.add_argument('-s', '--save', default="bsp.txt" ,help="Save agent to this dir")
+    parser.add_argument('-s', '--save', default="outputAgent" ,help="Save agent to this dir")
     parser.add_argument('-se', '--save-episodes', type=int, default=100, help="Save agent every x episodes")
     parser.add_argument('-l', '--load', help="Load agent from this dir")
     parser.add_argument('-D', '--debug', action='store_true', default=True, help="Show debug outputs")
