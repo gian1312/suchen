@@ -63,6 +63,7 @@ class VizdoomC(Environment):
         self.env.add_available_button(Button.MOVE_LEFT)
         self.env.add_available_button(Button.MOVE_RIGHT)
         self.env.add_available_button(Button.ATTACK)
+        #self.env.add_available_game_variable(GameVariable.POSITION_Z)
         self.env.add_available_game_variable(GameVariable.AMMO2)
         self.env.add_available_game_variable(GameVariable.POSITION_X)
         self.env.add_available_game_variable(GameVariable.POSITION_Y)
@@ -123,7 +124,9 @@ class VizdoomC(Environment):
         #print("exeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecccccccccccuuuuuuuuuuuuuuuuuutttttttttttteeeeeeeeeeeeeeeee")
         #print(actions)
         actions=(actions.tolist())
-        #print(actions)
+        actions=[round(elem,0) for elem in actions]
+        actions=[1,0,0]
+        print(actions)
         r = self.env.make_action(actions) #hier hats änderungen self.env.make_action(actionlist(actions)) 
         d = self.env.is_episode_finished()
 
