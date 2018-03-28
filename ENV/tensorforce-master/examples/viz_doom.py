@@ -89,8 +89,14 @@ class VizdoomC(Environment):
 
     def close(self):
         raise NotImplementedError
-    def reset_environment(self):
-        self.reset()
+		
+    def reset_environment(self): #Redundant??
+        self.env.new_episode()
+        s = self.env.get_state().screen_buffer
+        s = self.process_image(s)
+        self.current_state = np.stack((s, s, s, s), axis = 2)
+        return self.current_state
+
     def reset(self):
         self.env.new_episode()
         s = self.env.get_state().screen_buffer
@@ -107,8 +113,8 @@ class VizdoomC(Environment):
     def get_current_state(self): # Neu, wir wissen nicht von wo current state kommt. (aus Viz oder ENV)
         return self.current_state
    
-    def execute(self, actionslist):
-        r = self.env.make_action(self.actionslist[action]) / 100.0
+    def execute(self, actions):
+        r = self.env.make_action(self.actionslist[actions]) / 100.0
         d = self.env.is_episode_finished()
 
         if d == False:
@@ -136,7 +142,7 @@ class VizdoomC(Environment):
     @property
     def states(self):
     
-        shape=(self.height, self.width)
+        shape=(self.height, self.width,4) #self.actionslist nur platzhalter --> ändern
         return dict(shape=shape, type='float') #self.height, self.width    
     
 
