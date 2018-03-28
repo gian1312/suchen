@@ -55,11 +55,13 @@ def main():
 
     args = parser.parse_args()
 
+    logging.basicConfig(filename='example.log',level=logging.DEBUG)
+	
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG)  # configurable!!!
-
+    logger.setLevel(logging.INFO)  # configurable!!!
     environment = VizdoomC(mode_id=args.mode, render=not args.hide) #(render=not args.hide) 
-
+	
+	
     if args.agent_config is not None:
         with open(args.agent_config, 'r') as fp:
             agent_config = json.load(fp=fp)
