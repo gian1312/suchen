@@ -115,10 +115,10 @@ class VizdoomC(Environment):
         return self.current_state
    
     def execute(self, actions):
-        print("exeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecccccccccccuuuuuuuuuuuuuuuuuutttttttttttteeeeeeeeeeeeeeeee")
-        print(actions)
+        #print("exeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecccccccccccuuuuuuuuuuuuuuuuuutttttttttttteeeeeeeeeeeeeeeee")
+        #print(actions)
         actions=(actions.tolist())
-        print(actions)
+        #print(actions)
         r = self.env.make_action(actions) #hier hats änderungen self.env.make_action(actionlist(actions)) 
         d = self.env.is_episode_finished()
 
