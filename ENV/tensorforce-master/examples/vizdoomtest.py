@@ -33,6 +33,7 @@ from tensorforce.execution import Runner
 from viz_doom import VizdoomC
 
 
+
 def main():
     parser = argparse.ArgumentParser()
 
@@ -71,7 +72,7 @@ def main():
 	
     if args.network_spec is not None:
         with open(args.network_spec, 'r') as fp:
-	    
+       
             network_spec = json.load(fp=fp)
     else:
         network_spec = None
@@ -143,7 +144,8 @@ def main():
     runner.close()
     logger.info("Learning finished. Total episodes: {ep}".format(ep=runner.episode))
 
-    environment.close()
+    #environment.close()
+	
 
 
 if __name__ == '__main__':

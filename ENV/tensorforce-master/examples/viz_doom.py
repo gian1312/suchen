@@ -70,7 +70,7 @@ class VizdoomC(Environment):
         self.env.set_episode_start_time(10)
         self.env.set_window_visible(render)
         self.env.set_sound_enabled(False)
-        self.env.set_living_reward(-1)
+        self.env.set_living_reward(-0.01)
         self.env.set_mode(Mode.PLAYER)
         self.env.init()
         
@@ -126,11 +126,11 @@ class VizdoomC(Environment):
         #actions=(actions.tolist())
         #maxi=max(actions)
         #actions=[1 if x>=maxi else 0 for x in actions]
-        if int(actions)==1:
+        if int(actions)==0:
            actions=[1.0,0.0,0.0]
-        elif int(actions)==2:
+        elif int(actions)==1:
            actions=[0.0,1.0,0.0]
-        elif int(actions)==3:
+        elif int(actions)==2:
            actions=[0.0,0.0,1.0]
         else:
            actions=[0.0,0.0,0.0]		
@@ -172,7 +172,7 @@ class VizdoomC(Environment):
 
     @property
     def actions(self):
-        return dict(shape=self.actionslist, type='float')
+        return dict(shape=self.actionslist, type='int', num_actions=3)
      #   return dict(shape=self.actionslist, type='bool', min_value=0, max_value=1)
         #return dict(type='int', shape=self.actionslist, min_value=0, max_value=1, num_actions=3)
   
