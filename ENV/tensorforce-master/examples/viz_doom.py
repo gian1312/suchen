@@ -29,10 +29,14 @@ from skimage.io import imsave
 from tensorforce.environments import Environment
 import tensorforce.util
 
-ACTION_SIZE = 1
+ACTION_SIZE = 3
 RESEIZE_HEIGHT = 84
 RESEIZE_WIDTH = 84
 CHANNELS = 1
+listactions1=list(range(0,ACTION_SIZE))
+listactions2 = np.identity(ACTION_SIZE, dtype=float).tolist()
+actiondict= dict(zip(listactions1, listactions2))
+
 
 class VizdoomC(Environment):
     """
@@ -69,15 +73,17 @@ class VizdoomC(Environment):
         self.env.set_episode_timeout(300)
         self.env.set_episode_start_time(10)
         self.env.set_window_visible(render)
-        self.env.set_sound_enabled(False)
+        self.env.set_sound_enabled(True)
         self.env.set_living_reward(-0.01)
         self.env.set_mode(Mode.PLAYER)
         self.env.init()
         
         #print(dir(self))
-        #self.actionslist = np.identity(ACTION_SIZE, dtype=float).tolist()
-        self.actionslist = ACTION_SIZE
-
+        #self.actionslist = np.identity(ACTION_SIZE, dtype=int).tolist()
+        #self.actionslist = ACTION_SIZE
+        listactions1=list(range(0,ACTION_SIZE))
+        listactions2 = np.identity(ACTION_SIZE, dtype=float).tolist()
+        actiondict= dict(zip(listactions1, listactions2))
 
 # TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
 
@@ -121,24 +127,29 @@ class VizdoomC(Environment):
         return self.current_state
    
     def execute(self, actions):
+        actions=int(actions)
         #print("exeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecccccccccccuuuuuuuuuuuuuuuuuutttttttttttteeeeeeeeeeeeeeeee")
         #print(actions)
+        #print(actiondict)
         #actions=(actions.tolist())
         #maxi=max(actions)
         #actions=[1 if x>=maxi else 0 for x in actions]
-        if int(actions)==0:
+        action=actiondict[actions]
+        '''
+		if int(actions)==0:
            actions=[1.0,0.0,0.0]
         elif int(actions)==1:
            actions=[0.0,1.0,0.0]
         elif int(actions)==2:
            actions=[0.0,0.0,1.0]
         else:
-           actions=[0.0,0.0,0.0]		
+           actions=[0.0,0.0,0.0]
+        '''		   
         #actions=[round(elem,0) for elem in actions]
         #actions=[1,0,1]
-        print("Linoooox 134")
-        print(actions)
-        r = self.env.make_action(actions) #hier hats änderungen self.env.make_action(actionlist(actions)) 
+        #print("Linoooox 134")
+        #print(action)
+        r = self.env.make_action(action) #hier hats änderungen self.env.make_action(actionlist(actions)) 
         d = self.env.is_episode_finished()
 
         if d == False:
@@ -172,7 +183,7 @@ class VizdoomC(Environment):
 
     @property
     def actions(self):
-        return dict(shape=self.actionslist, type='int', num_actions=3)
-     #   return dict(shape=self.actionslist, type='bool', min_value=0, max_value=1)
+        return dict(shape=1, type='int', num_actions=ACTION_SIZE)
+        #return dict(shape=self.actionslist, type='bool')
         #return dict(type='int', shape=self.actionslist, min_value=0, max_value=1, num_actions=3)
   
