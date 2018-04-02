@@ -178,7 +178,7 @@ class VizdoomC(Environment):
     def states(self):
     
         shape=(self.height, self.width,4) #self.actionslist nur platzhalter --> ändern
-        return dict(shape=shape, type='float') #self.height, self.width    
+        return dict(shape=shape, type='int') #int oder Float?!        self.height, self.width    
     
 
     @property
