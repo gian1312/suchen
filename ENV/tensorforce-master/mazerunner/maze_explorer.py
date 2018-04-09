@@ -108,7 +108,7 @@ def main():
         repeat_actions=1
     )
 
-    report_episodes = args.episodes // 1000
+    report_episodes = args.episodes // 10
     if args.debug:
         report_episodes = 1
 

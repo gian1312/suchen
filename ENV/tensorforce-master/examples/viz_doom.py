@@ -54,8 +54,10 @@ class VizdoomC(Environment):
         #print("Info\n\n")
         #print(self.actions)
         self.env = DoomGame()
-        self.env.set_doom_scenario_path("examples/basic.wad") #This corresponds to the simple task we will pose our agent
-        self.env.set_doom_map("map01")
+        self.env.set_doom_scenario_path("examples/D3_battle_navigation_split.wad")
+        #self.env.set_doom_scenario_path("examples/basic.wad") #This corresponds to the simple task we will pose our agent
+        self.env.set_doom_map("map01")#MazeMap
+		#self.env.set_doom_map("map01")
         self.env.set_screen_resolution(ScreenResolution.RES_640X480) # 160X120
         self.env.set_screen_format(ScreenFormat.GRAY8)
         self.env.set_render_hud(render)
@@ -63,9 +65,10 @@ class VizdoomC(Environment):
         self.env.set_render_weapon(render)
         self.env.set_render_decals(render)
         self.env.set_render_particles(render)
-        self.env.add_available_button(Button.MOVE_LEFT)
-        self.env.add_available_button(Button.MOVE_RIGHT)
-        self.env.add_available_button(Button.ATTACK)
+        self.env.add_available_button(Button.TURN_LEFT)
+        self.env.add_available_button(Button.TURN_RIGHT)
+        #self.env.add_available_button(Button.ATTACK)
+        self.env.add_available_button(Button.MOVE_FORWARD)
         #self.env.add_available_game_variable(GameVariable.POSITION_Z)
         self.env.add_available_game_variable(GameVariable.AMMO2)
         self.env.add_available_game_variable(GameVariable.POSITION_X)
@@ -178,7 +181,7 @@ class VizdoomC(Environment):
     def states(self):
     
         shape=(self.height, self.width,4) #self.actionslist nur platzhalter --> ändern
-        return dict(shape=shape, type='float') #int oder Float?!        self.height, self.width
+        return dict(shape=shape, type='float') #int oder Float?!        self.height, self.width    
     
 
     @property
