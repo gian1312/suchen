@@ -74,7 +74,7 @@ class VizdoomC(Environment):
         self.env.set_episode_start_time(10)
         self.env.set_window_visible(render)
         self.env.set_sound_enabled(True)
-        self.env.set_living_reward(-0.01)
+        self.env.set_living_reward(-1)
         self.env.set_mode(Mode.PLAYER)
         self.env.init()
         
@@ -178,7 +178,7 @@ class VizdoomC(Environment):
     def states(self):
     
         shape=(self.height, self.width,4) #self.actionslist nur platzhalter --> ändern
-        return dict(shape=shape, type='int') #int oder Float?!        self.height, self.width    
+        return dict(shape=shape, type='float') #int oder Float?!        self.height, self.width
     
 
     @property
