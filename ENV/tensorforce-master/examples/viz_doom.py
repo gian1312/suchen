@@ -29,7 +29,7 @@ from skimage.io import imsave
 from tensorforce.environments import Environment
 import tensorforce.util
 
-ACTION_SIZE = 3
+ACTION_SIZE = 5
 RESEIZE_HEIGHT = 84
 RESEIZE_WIDTH = 84
 CHANNELS = 1
@@ -54,9 +54,9 @@ class VizdoomC(Environment):
         #print("Info\n\n")
         #print(self.actions)
         self.env = DoomGame()
-        self.env.set_doom_scenario_path("examples/D3_battle_navigation_split.wad")
+        self.env.set_doom_scenario_path("examples/D3_battle_navigation_split.wad_manymaps_test.wad")
         #self.env.set_doom_scenario_path("examples/basic.wad") #This corresponds to the simple task we will pose our agent
-        self.env.set_doom_map("map01")#MazeMap
+        self.env.set_doom_map("map02")#MazeMap
 		#self.env.set_doom_map("map01")
         self.env.set_screen_resolution(ScreenResolution.RES_640X480) # 160X120
         self.env.set_screen_format(ScreenFormat.GRAY8)
@@ -67,6 +67,8 @@ class VizdoomC(Environment):
         self.env.set_render_particles(render)
         self.env.add_available_button(Button.TURN_LEFT)
         self.env.add_available_button(Button.TURN_RIGHT)
+        self.env.add_available_button(Button.MOVE_RIGHT)
+        self.env.add_available_button(Button.MOVE_RIGHT)
         #self.env.add_available_button(Button.ATTACK)
         self.env.add_available_button(Button.MOVE_FORWARD)
         #self.env.add_available_game_variable(GameVariable.POSITION_Z)
