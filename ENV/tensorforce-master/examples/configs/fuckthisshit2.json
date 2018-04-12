@@ -1,0 +1,15 @@
+[
+    {
+        "type": "flatten",
+    },
+    {
+        "type": "dense",
+        "size": 32,
+        "activation": "tanh"
+    },
+    {
+        "type": "dense",
+        "size": 32,
+        "activation": "tanh"
+    }
+]
